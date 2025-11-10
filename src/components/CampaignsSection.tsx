@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Package, ArrowRight, Code, Database, Layers, Cpu, FileText, Settings, Zap, CheckCircle, ExternalLink, Download, Star, Sparkles, Award } from 'lucide-react';
 
-export const LayerXSection: React.FC = () => {
+export const CampaignsSection: React.FC = () => {
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
   const [showCodeExample, setShowCodeExample] = useState(false);
 

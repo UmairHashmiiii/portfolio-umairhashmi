@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, MessageCircle, ArrowRight, Code, Smartphone, Server, Sparkles, Zap, Star, Award } from 'lucide-react';
+import { Mail, Linkedin, MessageCircle, ArrowRight, TrendingUp, Target, BarChart3, Sparkles, Zap, Star, Award } from 'lucide-react';
 import { FloatingElements } from './FloatingElements';
 
 export const HeroSection: React.FC = () => {
@@ -8,27 +8,27 @@ export const HeroSection: React.FC = () => {
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      href: 'https://wa.me/923184431218',
+      href: 'https://wa.me/971547634170',
       color: 'text-green-500',
       bgColor: 'bg-green-500/10 hover:bg-green-500/20'
     },
     {
-      icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/Umaiir11',
-      color: 'text-dev-text-primary-light dark:text-dev-text-primary-dark',
-      bgColor: 'bg-gray-500/10 hover:bg-gray-500/20'
+      icon: Mail,
+      label: 'Email',
+      href: 'mailto:Atif.qadeerr@gmail.com',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-500/10 hover:bg-blue-500/20'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/umair-hashmi/',
+      href: 'https://www.linkedin.com/in/atif-qadeer',
       color: 'text-blue-600',
       bgColor: 'bg-blue-500/10 hover:bg-blue-500/20'
     }
   ];
 
-  const techStack = ['Flutter', 'Dart', 'GetX', 'Laravel', 'FastAPI', 'Firebase'];
+  const techStack = ['Facebook Ads', 'Google Ads', 'SEO', 'Social Media', 'Lead Generation', 'Analytics'];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-dev-bg-light via-dev-surface-light to-dev-bg-light dark:from-dev-bg-dark dark:via-dev-surface-dark dark:to-dev-bg-dark overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-32">
@@ -128,7 +128,7 @@ export const HeroSection: React.FC = () => {
               <div className="relative px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full bg-dev-accent-blue/10 border border-dev-accent-blue/30 text-dev-accent-blue text-xs sm:text-sm font-semibold backdrop-blur-sm">
                 <div className="flex items-center">
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 animate-pulse" />
-                  LayerX Architecture Creator
+                  Digital Marketing Specialist
                   <motion.div
                     className="ml-1.5 sm:ml-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-dev-accent-emerald rounded-full"
                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
@@ -158,7 +158,7 @@ export const HeroSection: React.FC = () => {
                   }}
                   style={{ backgroundSize: '200% 200%' }}
                 >
-                  Umair Hashmi
+                  Atif Qadeer
                 </motion.span>
                 
                 {/* Animated Underline */}
@@ -179,9 +179,9 @@ export const HeroSection: React.FC = () => {
               className="flex flex-wrap justify-center xl:justify-start items-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg mb-3 sm:mb-4 lg:mb-6"
             >
               {[
-                { icon: Smartphone, text: 'Flutter Expert', colors: ['#10b981', '#3b82f6', '#8b5cf6'] },
-                { icon: Server, text: 'Full-Stack Engineer', colors: ['#8b5cf6', '#f97316', '#10b981'] },
-                { icon: Zap, text: '60FPS Optimizer', colors: ['#f97316', '#10b981', '#3b82f6'] }
+                { icon: Target, text: 'Lead Generation Expert', colors: ['#10b981', '#3b82f6', '#8b5cf6'] },
+                { icon: TrendingUp, text: 'Meta & Google Ads', colors: ['#8b5cf6', '#f97316', '#10b981'] },
+                { icon: BarChart3, text: 'ROI Optimizer', colors: ['#f97316', '#10b981', '#3b82f6'] }
               ].map((role, index) => (
                 <motion.div
                   key={role.text}
@@ -234,7 +234,7 @@ export const HeroSection: React.FC = () => {
               <div className="relative px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 backdrop-blur-sm">
                 <div className="flex items-center space-x-2 sm:space-x-3 text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-green-500" />
-                  <span className="text-xs sm:text-sm lg:text-base">Upwork Freelancer</span>
+                  <span className="text-xs sm:text-sm lg:text-base">Dubai Based Marketing Pro</span>
                   <div className="flex items-center space-x-0.5 sm:space-x-1">
                     {[...Array(5)].map((_, i) => (
                       <motion.div
@@ -247,7 +247,7 @@ export const HeroSection: React.FC = () => {
                       </motion.div>
                     ))}
                   </div>
-                  <span className="text-green-500 font-bold text-xs sm:text-sm lg:text-base">5.0</span>
+                  <span className="text-green-500 font-bold text-xs sm:text-sm lg:text-base">Expert</span>
                 </div>
               </div>
             </motion.div>
@@ -260,12 +260,12 @@ export const HeroSection: React.FC = () => {
               className="relative"
             >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-3xl mx-auto xl:mx-0 text-dev-text-secondary-light dark:text-dev-text-secondary-dark leading-relaxed px-2 xl:px-0">
-                Engineering{' '}
-                <motion.span 
+                Driving{' '}
+                <motion.span
                   className="text-dev-accent-blue font-bold relative cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                 >
-                  future-ready Flutter apps
+                  high-quality leads
                   <motion.div
                     className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 bg-dev-accent-blue/50"
                     initial={{ scaleX: 0 }}
@@ -273,26 +273,26 @@ export const HeroSection: React.FC = () => {
                     transition={{ delay: 1.5, duration: 0.8 }}
                   />
                 </motion.span>
-                {' '}using{' '}
-                <motion.span 
+                {' '}through{' '}
+                <motion.span
                   className="text-dev-accent-emerald font-bold cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                 >
-                  clean architecture
+                  data-driven campaigns
                 </motion.span>
                 ,{' '}
-                <motion.span 
+                <motion.span
                   className="text-dev-accent-purple font-bold cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                 >
-                  optimized logic
+                  strategic targeting
                 </motion.span>
                 , and{' '}
-                <motion.span 
+                <motion.span
                   className="text-dev-accent-orange font-bold cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                 >
-                  scalable backend APIs
+                  optimized ad spend
                 </motion.span>
                 .
               </p>
@@ -316,18 +316,18 @@ export const HeroSection: React.FC = () => {
               <div className="relative px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-full bg-gradient-to-r from-dev-accent-emerald/10 to-dev-accent-blue/10 border border-dev-accent-emerald/30 backdrop-blur-sm">
                 <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6 text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold">
                   <div className="text-center">
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">4+</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">6+</div>
                     <div className="text-xs opacity-70">Years</div>
                   </div>
                   <div className="w-px h-4 sm:h-6 lg:h-8 bg-dev-accent-emerald/30" />
                   <div className="text-center">
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">20+</div>
-                    <div className="text-xs opacity-70">Apps</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">5K+</div>
+                    <div className="text-xs opacity-70">Leads</div>
                   </div>
                   <div className="w-px h-4 sm:h-6 lg:h-8 bg-dev-accent-emerald/30" />
                   <div className="text-center">
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">2.0</div>
-                    <div className="text-xs opacity-70">LayerX</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl">$15</div>
+                    <div className="text-xs opacity-70">Avg CPL</div>
                   </div>
                 </div>
               </div>
@@ -499,10 +499,10 @@ export const HeroSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <img
-                  src="/20250611_1436_Modern_Portrait_Avatar_remix_01jxf5ekpbfrjb1k012xgkaszq-removebg-preview.png"
-                  alt="Umair Hashmi - Flutter Developer"
+                  src="/FB_IMG_1762377062818-removebg-preview copy.png"
+                  alt="Atif Qadeer - Digital Marketing Specialist"
                   className="w-full h-full object-contain object-center"
-                  style={{ 
+                  style={{
                     objectFit: 'contain',
                     objectPosition: 'center'
                   }}

@@ -1,54 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Package, Brain, Layers, Database, ArrowRight, Sparkles, Star, User, Award } from 'lucide-react';
+import { Target, TrendingUp, BarChart3, Users, ArrowRight, Sparkles, Star, Award } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const highlights = [
     {
-      icon: Layers,
-      title: 'LayerX Architecture Creator',
-      description: 'Revolutionary Flutter architecture that transforms how developers build scalable applications',
-      link: 'https://pub.dev/packages/layerx_generator',
+      icon: Target,
+      title: 'RE Lead Generation Expert',
+      description: 'Specialized in real estate lead generation strategies across Facebook, Instagram, and Google platforms',
       gradient: 'from-blue-600 via-purple-600 to-indigo-600',
       bgGradient: 'from-blue-500/10 via-purple-500/10 to-indigo-500/10',
       iconBg: 'from-blue-500 to-indigo-600',
-      stats: '2.0.0 Version'
+      stats: 'Dubai Market'
     },
     {
-      icon: Package,
-      title: 'Official Pub.dev Package',
-      description: 'Published and maintained package trusted by Flutter developers worldwide',
-      link: 'https://pub.dev/packages/layerx_generator',
+      icon: TrendingUp,
+      title: 'Meta & Google Ads Specialist',
+      description: 'Expert in creating, managing, and optimizing paid social media and search campaigns',
       gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
       bgGradient: 'from-emerald-500/10 via-teal-500/10 to-cyan-500/10',
       iconBg: 'from-emerald-500 to-cyan-600',
-      stats: '167+ Downloads'
+      stats: '$15.22 CPL'
     },
     {
-      icon: Brain,
-      title: 'Deep Focus on Dart OOP',
-      description: 'Master of SOLID principles, advanced design patterns, and clean architecture implementation',
+      icon: BarChart3,
+      title: 'Data-Driven Strategy',
+      description: 'ROI-focused approach with comprehensive analytics, A/B testing, and continuous optimization',
       gradient: 'from-orange-600 via-red-600 to-pink-600',
       bgGradient: 'from-orange-500/10 via-red-500/10 to-pink-500/10',
       iconBg: 'from-orange-500 to-pink-600',
-      stats: '4+ Years'
+      stats: '6+ Years'
     },
     {
-      icon: Database,
-      title: 'Full-stack Development',
-      description: 'End-to-end solutions with modern backend technologies and scalable database architectures',
+      icon: Users,
+      title: 'Full-Spectrum Marketing',
+      description: 'SEO, social media management, content strategy, and brand development expertise',
       gradient: 'from-violet-600 via-purple-600 to-fuchsia-600',
       bgGradient: 'from-violet-500/10 via-purple-500/10 to-fuchsia-500/10',
       iconBg: 'from-violet-500 to-fuchsia-600',
-      stats: '20+ Apps'
+      stats: '5000+ Leads'
     }
   ];
 
   return (
     <section id="about" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-dev-surface-light via-dev-bg-light to-dev-surface-light dark:from-dev-surface-dark dark:via-dev-bg-dark dark:to-dev-surface-dark relative overflow-hidden">
-      {/* Enhanced Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated Gradient Orbs */}
         {Array.from({ length: 6 }).map((_, i) => (
           <motion.div
             key={i}
@@ -76,7 +72,6 @@ export const AboutSection: React.FC = () => {
           />
         ))}
 
-        {/* Floating Particles */}
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={`particle-${i}`}
@@ -100,7 +95,6 @@ export const AboutSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative">
-        {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -108,7 +102,6 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Enhanced Badge */}
             <motion.div
               className="inline-flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 backdrop-blur-xl rounded-full border border-blue-500/20 mb-6 sm:mb-8 relative overflow-hidden"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -116,20 +109,19 @@ export const AboutSection: React.FC = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
               whileHover={{ scale: 1.05 }}
             >
-              {/* Shimmer Effect */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
                 initial={{ x: '-100%' }}
                 animate={{ x: '200%' }}
                 transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
               />
-              
+
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3 text-blue-500" />
               <span className="text-blue-500 font-bold text-sm sm:text-base lg:text-lg">Professional Excellence</span>
               <motion.div
                 className="ml-2 sm:ml-3 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-                animate={{ 
-                  scale: [1, 1.5, 1], 
+                animate={{
+                  scale: [1, 1.5, 1],
                   opacity: [1, 0.5, 1],
                   rotate: [0, 180, 360]
                 }}
@@ -158,13 +150,12 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Senior Flutter Developer with 4+ years of experience creating production-ready mobile applications. 
-              Creator of LayerX architecture and passionate about clean code, scalable solutions, and performant apps.
+              Results-driven Digital Marketing Specialist with 6+ years of experience in lead generation,
+              campaign management, and data-driven marketing strategies. Proven track record in the Dubai real estate market.
             </motion.p>
           </motion.div>
         </div>
 
-        {/* Modern Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {highlights.map((highlight, index) => (
             <motion.div
@@ -177,21 +168,19 @@ export const AboutSection: React.FC = () => {
             >
               <motion.div
                 className="relative h-full p-6 sm:p-8 lg:p-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl hover:shadow-4xl transition-all duration-700 overflow-hidden"
-                whileHover={{ 
-                  y: -12, 
+                whileHover={{
+                  y: -12,
                   scale: 1.02,
                   rotateX: 5,
                   rotateY: 5
                 }}
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                {/* Animated Background Gradient */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${highlight.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
                   initial={false}
                 />
 
-                {/* Shimmer Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
@@ -199,7 +188,6 @@ export const AboutSection: React.FC = () => {
                   transition={{ duration: 1.5 }}
                 />
 
-                {/* Floating Particles */}
                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   {Array.from({ length: 8 }).map((_, i) => (
                     <motion.div
@@ -224,7 +212,6 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div className="relative z-10">
-                  {/* Header */}
                   <div className="flex items-start justify-between mb-4 sm:mb-6">
                     <div className="flex items-center">
                       <motion.div
@@ -256,7 +243,6 @@ export const AboutSection: React.FC = () => {
                     </motion.div>
                   </div>
 
-                  {/* Content */}
                   <motion.h3
                     className="text-xl sm:text-2xl lg:text-3xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-3 sm:mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-500"
                     initial={{ opacity: 0, x: -20 }}
@@ -275,39 +261,6 @@ export const AboutSection: React.FC = () => {
                     {highlight.description}
                   </motion.p>
 
-                  {/* Action Button */}
-                  {highlight.link && (
-                    <motion.a
-                      href={highlight.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group/btn relative overflow-hidden"
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8 + index * 0.1 }}
-                    >
-                      <span className="mr-2 relative z-10 text-sm sm:text-base">Explore Package</span>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="relative z-10"
-                      >
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </motion.div>
-                      
-                      {/* Button Shimmer */}
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 rounded-xl"
-                        initial={{ x: '-100%' }}
-                        whileHover={{ x: '200%' }}
-                        transition={{ duration: 0.8 }}
-                      />
-                    </motion.a>
-                  )}
-
-                  {/* Decorative Elements */}
                   <div className="absolute top-3 sm:top-4 right-3 sm:right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
                     <motion.div
                       animate={{ rotate: 360 }}
@@ -318,7 +271,6 @@ export const AboutSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Glow Effect */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-r ${highlight.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700 -z-10`}
                   initial={false}
@@ -328,7 +280,6 @@ export const AboutSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -346,10 +297,10 @@ export const AboutSection: React.FC = () => {
               animate={{ x: '200%' }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             />
-            
+
             <Star className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3 text-blue-500" />
             <span className="text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold text-sm sm:text-base lg:text-lg">
-              Ready to build your next big idea together
+              Ready to elevate your marketing strategy
             </span>
           </motion.div>
         </motion.div>

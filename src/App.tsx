@@ -3,8 +3,7 @@ import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { SkillsSection } from './components/SkillsSection';
-import { ProjectsSection } from './components/ProjectsSection';
-import { LayerXSection } from './components/LayerXSection';
+import { CampaignsSection } from './components/CampaignsSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { ContactSection } from './components/ContactSection';
 
@@ -15,8 +14,7 @@ function App() {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
-      <ProjectsSection />
-      <LayerXSection />
+      <CampaignsSection />
       <AchievementsSection />
       <ContactSection />
     </div>

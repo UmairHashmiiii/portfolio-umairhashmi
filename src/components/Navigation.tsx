@@ -6,8 +6,8 @@ export const Navigation: React.FC = () => {
   const navItems = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'LayerX', href: '#layerx' },
+    { label: 'Campaigns', href: '#campaigns' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -29,7 +29,7 @@ export const Navigation: React.FC = () => {
             className="font-bold text-lg sm:text-xl text-dev-text-primary-light dark:text-dev-text-primary-dark"
             whileHover={{ scale: 1.05 }}
           >
-            Umair Hashmi
+            Atif Qadeer
           </motion.div>
           
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">

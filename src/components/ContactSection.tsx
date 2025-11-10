@@ -16,28 +16,28 @@ export const ContactSection: React.FC = () => {
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      href: 'https://wa.me/923184431218',
+      href: 'https://wa.me/971547634170',
       color: 'text-green-500',
       description: 'Direct message for quick response'
     },
     {
       icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/Umaiir11',
+      label: 'Email',
+      href: 'mailto:Atif.qadeerr@gmail.com',
       color: 'text-dev-text-primary-light dark:text-dev-text-primary-dark',
-      description: 'View my open source contributions'
+      description: 'Send me an email directly'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/umair-hashmi/',
+      href: 'https://www.linkedin.com/in/atif-qadeer',
       color: 'text-blue-600',
       description: 'Professional networking and updates'
     }
   ];
 
   const whatsappMessage = encodeURIComponent(
-    "👋 Hey, this is Umair Hashmi – Flutter & Full-Stack Developer. How can I help you build your next big idea?"
+    "👋 Hey, this is Atif Qadeer – Digital Marketing & Lead Generation Specialist. How can I help grow your business?"
   );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,7 +58,7 @@ export const ContactSection: React.FC = () => {
       const body = encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       );
-      const mailtoLink = `mailto:iam.umairimran@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:Atif.qadeerr@gmail.com?subject=${subject}&body=${body}`;
       
       // Open default email client
       window.location.href = mailtoLink;
@@ -177,8 +177,8 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Ready to turn your ideas into reality? I'm here to help you build scalable, 
-            performant Flutter applications with clean architecture and modern best practices.
+            Ready to scale your business? I'm here to help you generate quality leads,
+            optimize your marketing ROI, and drive sustainable growth through data-driven strategies.
           </motion.p>
         </motion.div>
 
@@ -196,8 +196,8 @@ export const ContactSection: React.FC = () => {
                 Get In Touch
               </h3>
               <p className="text-base sm:text-lg lg:text-xl text-dev-text-secondary-light dark:text-dev-text-secondary-dark leading-relaxed">
-                Whether you need a Flutter expert for your next project, want to discuss LayerX architecture, 
-                or explore full-stack development opportunities, I'm always excited to connect with fellow developers and innovators.
+                Whether you need a digital marketing expert for lead generation, want to optimize your ad campaigns,
+                or explore growth opportunities for your business, I'm always excited to connect with brands and entrepreneurs.
               </p>
             </div>
 
@@ -208,7 +208,7 @@ export const ContactSection: React.FC = () => {
               >
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500 mr-3 sm:mr-4" />
                 <span className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium text-sm sm:text-base">
-                  +92 318 4431218
+                  +971 54 763 4170
                 </span>
               </motion.div>
               <motion.div 
@@ -217,7 +217,7 @@ export const ContactSection: React.FC = () => {
               >
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mr-3 sm:mr-4" />
                 <span className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium text-sm sm:text-base">
-                  iam.umairimran@gmail.com
+                  Atif.qadeerr@gmail.com
                 </span>
               </motion.div>
               <motion.div 
@@ -226,14 +226,14 @@ export const ContactSection: React.FC = () => {
               >
                 <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500 mr-3 sm:mr-4" />
                 <span className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium text-sm sm:text-base">
-                  Remote & On-site Projects
+                  Dubai, UAE
                 </span>
               </motion.div>
             </div>
 
             {/* Primary CTA */}
             <motion.a
-              href={`https://wa.me/923184431218?text=${whatsappMessage}`}
+              href={`https://wa.me/971547634170?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
@@ -474,7 +474,7 @@ export const ContactSection: React.FC = () => {
           className="text-center mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 border-t border-gray-200/50 dark:border-gray-700/50"
         >
           <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark text-base sm:text-lg">
-            © 2025 Umair Hashmi. Built with ❤️.
+            © 2025 Atif Qadeer. Built with ❤️.
           </p>
         </motion.div>
       </div>
