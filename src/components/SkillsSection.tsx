@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Smartphone, Server, Database, Code, Globe, Wrench, ChevronRight, Zap, Star, Award } from 'lucide-react';
+import { Zap, TrendingUp, Target, PenTool, BarChart3, Globe, ChevronRight, Star, Award, Sparkles } from 'lucide-react';
 
 export const SkillsSection: React.FC = () => {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
@@ -8,93 +8,93 @@ export const SkillsSection: React.FC = () => {
 
   const skillCategories = [
     {
-      icon: Smartphone,
-      title: 'Flutter Development',
+      icon: Target,
+      title: 'Paid Advertising',
       color: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-500/10 to-cyan-500/10',
       borderColor: 'border-blue-500/30',
       skills: [
-        { name: 'MVVM Architecture', level: 95, description: 'Clean separation of concerns with GetX' },
-        { name: 'GetX State Management', level: 98, description: 'Reactive programming and dependency injection' },
-        { name: 'Custom Painters', level: 90, description: 'Complex UI animations and graphics' },
-        { name: 'Performance Optimization', level: 95, description: '60FPS smooth animations' },
-        { name: 'Responsive Design', level: 92, description: 'Multi-device compatibility' },
-        { name: 'Widget Composition', level: 96, description: 'Reusable and maintainable components' }
+        { name: 'Facebook Ads Management', level: 96, description: 'Lead ads, carousel, and conversion campaigns' },
+        { name: 'Google Ads Expertise', level: 94, description: 'Search, Display, and Video campaigns' },
+        { name: 'Campaign Optimization', level: 95, description: 'A/B testing and bid strategy management' },
+        { name: 'Digital Display Ads', level: 90, description: 'Banner ads and programmatic advertising' },
+        { name: 'Retargeting Strategies', level: 92, description: 'Audience segmentation and conversion focus' },
+        { name: 'Budget Management', level: 93, description: 'ROI optimization and cost control' }
       ]
     },
     {
-      icon: Code,
-      title: 'Dart Expertise',
+      icon: TrendingUp,
+      title: 'Lead Generation',
       color: 'from-emerald-500 to-teal-500',
       bgGradient: 'from-emerald-500/10 to-teal-500/10',
       borderColor: 'border-emerald-500/30',
       skills: [
-        { name: 'Object-Oriented Programming', level: 98, description: 'SOLID principles and design patterns' },
-        { name: 'Data Structures & Algorithms', level: 90, description: 'Efficient problem solving' },
-        { name: 'Async Programming', level: 95, description: 'Futures, Streams, and Isolates' },
-        { name: 'Clean Code', level: 96, description: 'Readable and maintainable code' },
-        { name: 'Testing', level: 88, description: 'Unit, widget, and integration tests' },
-        { name: 'Package Development', level: 92, description: 'Creating reusable Dart packages' }
+        { name: 'RE Lead Generation', level: 97, description: 'Real Estate market specialization' },
+        { name: 'Lead Qualification', level: 94, description: 'Quality score optimization' },
+        { name: 'Funnel Optimization', level: 93, description: 'Converting prospects to customers' },
+        { name: 'Landing Page Design', level: 88, description: 'High-converting page layouts' },
+        { name: 'CRM Integration', level: 89, description: 'Lead tracking and management' },
+        { name: 'Cost Per Lead Reduction', level: 95, description: 'Achieving $15.22 average CPL' }
       ]
     },
     {
-      icon: Server,
-      title: 'Backend Development',
+      icon: PenTool,
+      title: 'Organic Growth',
       color: 'from-purple-500 to-indigo-500',
       bgGradient: 'from-purple-500/10 to-indigo-500/10',
       borderColor: 'border-purple-500/30',
       skills: [
-        { name: 'Laravel (PHP)', level: 92, description: 'Eloquent ORM and API development' },
-        { name: 'FastAPI (Python)', level: 88, description: 'High-performance async APIs' },
-        { name: 'RESTful APIs', level: 95, description: 'Scalable API architecture' },
-        { name: 'Microservices', level: 85, description: 'Distributed system design' },
-        { name: 'Authentication', level: 90, description: 'JWT, OAuth, and security' },
-        { name: 'API Documentation', level: 92, description: 'Swagger and comprehensive docs' }
+        { name: 'SEO Planning & Implementation', level: 92, description: 'On-page and technical SEO' },
+        { name: 'Social Media Management', level: 93, description: 'Content scheduling and engagement' },
+        { name: 'Content Strategy', level: 91, description: 'Audience-focused content planning' },
+        { name: 'Keywords Research', level: 90, description: 'High-intent keyword identification' },
+        { name: 'SERP Ranking Optimization', level: 88, description: 'Improving search visibility' },
+        { name: 'Social Media Analytics', level: 89, description: 'Performance tracking and insights' }
       ]
     },
     {
-      icon: Database,
-      title: 'Database & Storage',
+      icon: BarChart3,
+      title: 'Analytics & Data',
       color: 'from-orange-500 to-red-500',
       bgGradient: 'from-orange-500/10 to-red-500/10',
       borderColor: 'border-orange-500/30',
       skills: [
-        { name: 'MySQL/PostgreSQL', level: 90, description: 'Complex queries and optimization' },
-        { name: 'Firebase', level: 95, description: 'Real-time database and cloud functions' },
-        { name: 'SQLite', level: 92, description: 'Local storage and offline capabilities' },
-        { name: 'Hive', level: 88, description: 'Fast NoSQL database for Flutter' },
-        { name: 'Data Modeling', level: 94, description: 'Efficient schema design' },
-        { name: 'Caching Strategies', level: 87, description: 'Redis and in-memory caching' }
-      ]
-    },
-    {
-      icon: Wrench,
-      title: 'Development Tools',
-      color: 'from-pink-500 to-rose-500',
-      bgGradient: 'from-pink-500/10 to-rose-500/10',
-      borderColor: 'border-pink-500/30',
-      skills: [
-        { name: 'Git & GitHub', level: 95, description: 'Version control and collaboration' },
-        { name: 'CI/CD Pipelines', level: 85, description: 'Automated testing and deployment' },
-        { name: 'Docker', level: 80, description: 'Containerization and deployment' },
-        { name: 'Postman', level: 92, description: 'API testing and documentation' },
-        { name: 'VSCode', level: 98, description: 'Advanced IDE configuration' },
-        { name: 'Debugging', level: 94, description: 'Performance profiling and optimization' }
+        { name: 'Google Analytics', level: 91, description: 'User behavior and conversion tracking' },
+        { name: 'Campaign Analytics', level: 93, description: 'Performance metrics and KPIs' },
+        { name: 'Data-Driven Decisions', level: 94, description: 'Insights to strategy optimization' },
+        { name: 'CTR & Quality Score', level: 92, description: 'Ad quality and relevance metrics' },
+        { name: 'ROI Calculation', level: 95, description: 'Return on investment optimization' },
+        { name: 'Report Generation', level: 90, description: 'Dashboard creation and analysis' }
       ]
     },
     {
       icon: Globe,
-      title: 'Platforms & Deployment',
+      title: 'Platform Expertise',
+      color: 'from-pink-500 to-rose-500',
+      bgGradient: 'from-pink-500/10 to-rose-500/10',
+      borderColor: 'border-pink-500/30',
+      skills: [
+        { name: 'Facebook/Instagram', level: 96, description: 'Meta ads platform mastery' },
+        { name: 'Google Marketing Platform', level: 93, description: 'Search and display networks' },
+        { name: 'WordPress Management', level: 87, description: 'Website setup and optimization' },
+        { name: 'Shopify Setup', level: 85, description: 'E-commerce platform configuration' },
+        { name: 'LinkedIn Ads', level: 86, description: 'B2B targeted campaigns' },
+        { name: 'YouTube Advertising', level: 84, description: 'Video campaign creation and management' }
+      ]
+    },
+    {
+      icon: Sparkles,
+      title: 'Brand Development',
       color: 'from-violet-500 to-purple-500',
       bgGradient: 'from-violet-500/10 to-purple-500/10',
       borderColor: 'border-violet-500/30',
       skills: [
-        { name: 'Cross-platform Development', level: 96, description: 'iOS, Android, Web, Desktop' },
-        { name: 'App Store Deployment', level: 90, description: 'Play Store and App Store publishing' },
-        { name: 'Web Deployment', level: 88, description: 'Firebase Hosting and Netlify' },
-        { name: 'Cloud Services', level: 85, description: 'AWS, Google Cloud, Firebase' },
-        { name: 'Performance Monitoring', level: 87, description: 'Crashlytics and analytics' },
-        { name: 'Progressive Web Apps', level: 83, description: 'PWA development and optimization' }
+        { name: 'Digital Brand Development', level: 88, description: 'Brand identity and positioning' },
+        { name: 'Brand Messaging', level: 87, description: 'Compelling brand narratives' },
+        { name: 'Market Research', level: 89, description: 'Competitive analysis and insights' },
+        { name: 'Audience Targeting', level: 92, description: 'Precise audience segmentation' },
+        { name: 'Brand Consistency', level: 90, description: 'Unified brand experience' },
+        { name: 'Crisis Management', level: 86, description: 'Online reputation management' }
       ]
     }
   ];
@@ -108,9 +108,7 @@ export const SkillsSection: React.FC = () => {
 
   return (
     <section id="skills" className="py-24 bg-gradient-to-br from-dev-bg-light via-dev-surface-light to-dev-bg-light dark:from-dev-bg-dark dark:via-dev-surface-dark dark:to-dev-bg-dark relative overflow-hidden">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Orbs */}
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
@@ -135,7 +133,6 @@ export const SkillsSection: React.FC = () => {
           />
         ))}
 
-        {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
@@ -145,7 +142,6 @@ export const SkillsSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +157,7 @@ export const SkillsSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Zap className="w-5 h-5 mr-3 text-dev-accent-blue" />
-            <span className="text-dev-accent-blue font-bold">Technical Expertise</span>
+            <span className="text-dev-accent-blue font-bold">Marketing Expertise</span>
             <motion.div
               className="ml-3 w-2 h-2 bg-dev-accent-emerald rounded-full"
               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
@@ -190,12 +186,11 @@ export const SkillsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Comprehensive skillset spanning mobile development, backend engineering, and modern development practices.
-            Specialized in creating production-ready applications with clean architecture.
+            Comprehensive expertise in digital marketing, lead generation, and data-driven campaign management.
+            Specialized in real estate marketing and proven track record in delivering high-quality leads.
           </motion.p>
         </motion.div>
 
-        {/* Skills Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
@@ -213,7 +208,6 @@ export const SkillsSection: React.FC = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 onClick={() => setActiveCategory(activeCategory === categoryIndex ? null : categoryIndex)}
               >
-                {/* Shimmer Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
                   initial={{ x: '-100%' }}
@@ -221,10 +215,8 @@ export const SkillsSection: React.FC = () => {
                   transition={{ duration: 1.5 }}
                 />
 
-                {/* Glass Effect Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-50`} />
-                
-                {/* Header */}
+
                 <div className="relative z-10 mb-6">
                   <div className="flex items-center justify-between mb-4">
                     <motion.div
@@ -234,7 +226,7 @@ export const SkillsSection: React.FC = () => {
                     >
                       <category.icon className="w-8 h-8 text-white" />
                     </motion.div>
-                    
+
                     <motion.div
                       animate={{ rotate: activeCategory === categoryIndex ? 90 : 0 }}
                       transition={{ duration: 0.3 }}
@@ -242,11 +234,11 @@ export const SkillsSection: React.FC = () => {
                       <ChevronRight className="w-6 h-6 text-dev-text-secondary-light dark:text-dev-text-secondary-dark" />
                     </motion.div>
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-2">
                     {category.title}
                   </h3>
-                  
+
                   <div className="flex items-center space-x-2">
                     <Star className="w-4 h-4 text-yellow-500 fill-current" />
                     <span className="text-sm text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium">
@@ -254,8 +246,7 @@ export const SkillsSection: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                
-                {/* Skills Preview */}
+
                 <div className="relative z-10 space-y-3">
                   {category.skills.slice(0, 3).map((skill, skillIndex) => (
                     <motion.div
@@ -284,7 +275,7 @@ export const SkillsSection: React.FC = () => {
                       </div>
                     </motion.div>
                   ))}
-                  
+
                   {category.skills.length > 3 && (
                     <motion.div
                       className="text-center pt-2"
@@ -297,7 +288,6 @@ export const SkillsSection: React.FC = () => {
                   )}
                 </div>
 
-                {/* Expanded Skills */}
                 <AnimatePresence>
                   {activeCategory === categoryIndex && (
                     <motion.div
@@ -346,7 +336,6 @@ export const SkillsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -356,10 +345,10 @@ export const SkillsSection: React.FC = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
-              { label: 'Technologies', value: '20+', icon: '⚡' },
-              { label: 'Years Experience', value: '4+', icon: '🚀' },
+              { label: 'Skills', value: '36+', icon: '⚡' },
+              { label: 'Years Experience', value: '6+', icon: '🚀' },
               { label: 'Skill Categories', value: '6', icon: '🎯' },
-              { label: 'Avg. Proficiency', value: '92%', icon: '⭐' }
+              { label: 'Avg. Proficiency', value: '91%', icon: '⭐' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -384,7 +373,7 @@ export const SkillsSection: React.FC = () => {
           >
             <Award className="w-5 h-5 mr-3 text-dev-accent-emerald" />
             <span className="text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold">
-              Continuously learning and evolving with the latest technologies
+              Continuously evolving with the latest marketing trends and technologies
             </span>
           </motion.div>
         </motion.div>
