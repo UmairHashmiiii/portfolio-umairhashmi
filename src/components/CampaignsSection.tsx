@@ -1,158 +1,134 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Package, ArrowRight, Code, Database, Layers, Cpu, FileText, Settings, Zap, CheckCircle, ExternalLink, Download, Star, Sparkles, Award } from 'lucide-react';
+import { TrendingUp, Target, Users, Eye, DollarSign, MousePointerClick, Calendar, Award, Sparkles, ExternalLink, Mail, Phone, MapPin, BarChart3, Activity, Zap } from 'lucide-react';
 
 export const CampaignsSection: React.FC = () => {
-  const [activeLayer, setActiveLayer] = useState<number | null>(null);
-  const [showCodeExample, setShowCodeExample] = useState(false);
+  const [activeCampaign, setActiveCampaign] = useState<number | null>(null);
+  const [showMetrics, setShowMetrics] = useState(false);
 
-  const architectureLayers = [
+  const primaryCampaigns = [
     {
-      name: 'View Layer',
-      icon: Layers,
-      description: 'UI Components & Widgets',
+      name: 'REBU Primary Leads Dubai',
+      platform: 'Lead-Ad-Facebook',
+      results: '670 Meta leads',
+      reach: '1,103,744',
+      impressions: '4,243,874',
+      costPerResult: '$97.74',
       color: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-500/10 to-cyan-500/10',
-      details: 'Stateless/Stateful widgets, Custom painters, Responsive design with flutter_screenutil',
-      files: ['home_view.dart', 'profile_view.dart', 'settings_view.dart'],
-      code: `class HomeView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<HomeController>(
-      builder: (controller) => Scaffold(
-        body: controller.isLoading 
-          ? LoadingWidget()
-          : HomeContent(),
-      ),
-    );
-  }
-}`
+      icon: Target
     },
     {
-      name: 'Controller Layer',
-      icon: Cpu,
-      description: 'Business Logic & State Management',
+      name: 'RE.Sales UAE Dubai LeadAds #1',
+      platform: 'Paid-Facebook',
+      results: '537 Meta leads',
+      reach: '503,181',
+      impressions: '1,397,104',
+      costPerResult: '$95.58',
       color: 'from-emerald-500 to-teal-500',
       bgGradient: 'from-emerald-500/10 to-teal-500/10',
-      details: 'GetX controllers, State management, Business logic separation',
-      files: ['home_controller.dart', 'auth_controller.dart', 'profile_controller.dart'],
-      code: `class HomeController extends GetxController {
-  final HomeService _service = Get.find();
-  
-  RxBool isLoading = false.obs;
-  RxList<User> users = <User>[].obs;
-  
-  @override
-  void onInit() {
-    fetchUsers();
-    super.onInit();
-  }
-  
-  Future<void> fetchUsers() async {
-    isLoading.value = true;
-    try {
-      final response = await _service.getUsers();
-      users.value = response.data;
-    } catch (e) {
-      Get.snackbar('Error', e.toString());
-    } finally {
-      isLoading.value = false;
-    }
-  }
-}`
+      icon: Users
     },
     {
-      name: 'Service Layer',
-      icon: Code,
-      description: 'API Integration & Data Processing',
+      name: 'RE.Sales UAE Dubai LeadAds #2',
+      platform: 'Paid-Facebook',
+      results: '1,138 Meta leads',
+      reach: '804,474',
+      impressions: '2,882,722',
+      costPerResult: '$42.32',
       color: 'from-purple-500 to-indigo-500',
       bgGradient: 'from-purple-500/10 to-indigo-500/10',
-      details: 'HTTP services, Data transformation, Error handling, Response parsing',
-      files: ['home_service.dart', 'auth_service.dart', 'https_service.dart'],
-      code: `class HomeService {
-  final HttpsService _httpsService = Get.find();
-  
-  Future<ApiResponse<List<User>>> getUsers() async {
-    try {
-      final response = await _httpsService.get(
-        AppUrls.users,
-        headers: {'Authorization': 'Bearer \${token}'}
-      );
-      
-      return ApiResponse<List<User>>.fromJson(
-        response.data,
-        (json) => (json as List)
-          .map((e) => User.fromJson(e))
-          .toList()
-      );
-    } catch (e) {
-      throw ServiceException(e.toString());
-    }
-  }
-}`
+      icon: TrendingUp,
+      highlight: true
     },
     {
-      name: 'Repository Layer',
-      icon: Database,
-      description: 'Data Source Management',
+      name: 'RE.Sales UAE Dubai LeadAds #3',
+      platform: 'Paid-Facebook',
+      results: '538 Meta leads',
+      reach: '196,988',
+      impressions: '571,725',
+      costPerResult: '$71.24',
       color: 'from-orange-500 to-red-500',
       bgGradient: 'from-orange-500/10 to-red-500/10',
-      details: 'Local storage, Remote APIs, Caching strategies, Data synchronization',
-      files: ['user_repository.dart', 'auth_repository.dart', 'local_storage.dart'],
-      code: `class UserRepository {
-  final ApiService _apiService = Get.find();
-  final LocalStorage _localStorage = Get.find();
-  
-  Future<List<User>> getUsers({bool forceRefresh = false}) async {
-    if (!forceRefresh) {
-      final cached = await _localStorage.getUsers();
-      if (cached.isNotEmpty) return cached;
-    }
-    
-    final users = await _apiService.fetchUsers();
-    await _localStorage.saveUsers(users);
-    return users;
-  }
-}`
+      icon: Activity
+    },
+    {
+      name: 'RE.Sales UAE Dubai LeadAds #4',
+      platform: 'Paid-Facebook',
+      results: '1,340 Meta leads',
+      reach: '644,133',
+      impressions: '2,196,175',
+      costPerResult: '$27.39',
+      color: 'from-pink-500 to-rose-500',
+      bgGradient: 'from-pink-500/10 to-rose-500/10',
+      icon: Zap,
+      highlight: true
+    },
+    {
+      name: 'RE.Sales UAE Dubai LeadAds #5',
+      platform: 'Paid-Facebook',
+      results: '1,081 Meta leads',
+      reach: '1,022,795',
+      impressions: '3,495,590',
+      costPerResult: '$33.07',
+      color: 'from-violet-500 to-purple-500',
+      bgGradient: 'from-violet-500/10 to-purple-500/10',
+      icon: BarChart3
+    },
+    {
+      name: 'RE.Sales UAE Dubai Website',
+      platform: 'Paid-Facebook',
+      results: 'Traffic Campaign',
+      reach: '980,671',
+      impressions: '4,690,676',
+      costPerResult: '—',
+      color: 'from-amber-500 to-yellow-500',
+      bgGradient: 'from-amber-500/10 to-yellow-500/10',
+      icon: MousePointerClick
+    },
+    {
+      name: 'RE.Sales UAE Dubai LeadAds #6',
+      platform: 'Paid-Facebook',
+      results: '554 Meta leads',
+      reach: '650,019',
+      impressions: '2,012,814',
+      costPerResult: '$60.16',
+      color: 'from-sky-500 to-blue-500',
+      bgGradient: 'from-sky-500/10 to-blue-500/10',
+      icon: Target
     }
   ];
 
-  const features = [
-    {
-      icon: Settings,
-      title: 'Auto-Generated Structure',
-      description: 'Complete MVVM directory structure with GetX integration',
-      gradient: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Zap,
-      title: 'Built-in Services',
-      description: 'HttpsService, SharedPreferencesHelper, JsonExtractor included',
-      gradient: 'from-emerald-500 to-teal-500'
-    },
-    {
-      icon: FileText,
-      title: 'Response Models',
-      description: 'Pre-configured API response and body models',
-      gradient: 'from-purple-500 to-indigo-500'
-    },
-    {
-      icon: Code,
-      title: 'Clean Architecture',
-      description: 'SOLID principles with clear separation of concerns',
-      gradient: 'from-orange-500 to-red-500'
-    }
+  const otherCampaigns = [
+    { name: 'Event: Dubai Property Show 2025', status: 'Off', results: '998 Event responses', reach: '93,285', frequency: '4.94', costPerResult: '$0.50' },
+    { name: 'Atif - Project Leads - 7th August', status: 'Active', results: '858 Meta leads', reach: '1,301,171', frequency: '2.24', costPerResult: '$15.22' },
+    { name: 'Asia', status: 'Active', results: '620 Follows/Likes', reach: '10,559', frequency: '1.48', costPerResult: '$0.39' },
+    { name: 'Atif - Generic Leads Overseas', status: 'Off', results: '479 Meta leads', reach: '126,061', frequency: '1.83', costPerResult: '$25.06' },
+    { name: 'Atif - New Project Based Leads - 31st May', status: 'Off', results: '399 Meta leads', reach: '276,257', frequency: '2.25', costPerResult: '$22.73' },
+    { name: 'Turkey Roadshow', status: 'Off', results: '260 Meta leads', reach: '122,738', frequency: '2.98', costPerResult: '$50.35' },
+    { name: '10JulyLeads', status: 'Active', results: '123 Link Clicks', reach: '11,590', frequency: '1.47', costPerResult: '—' },
+    { name: 'Atif - USA/Canada - Leads', status: 'Off', results: '83 Meta leads', reach: '33,098', frequency: '2.02', costPerResult: '$185.21' },
+    { name: 'UKTraffic', status: 'Active', results: '69 Link Clicks', reach: '4,032', frequency: '1.04', costPerResult: '$1.48' },
+    { name: 'SingaporeTraffic', status: 'Active', results: '57 Link Clicks', reach: '5,877', frequency: '1.09', costPerResult: '$1.52' }
   ];
 
   const stats = [
-    { label: 'Downloads', value: '167+', icon: Download, color: 'text-blue-500' },
-    { label: 'Pub Points', value: '160', icon: CheckCircle, color: 'text-emerald-500' },
-    { label: 'Likes', value: '20+', icon: '❤️', color: 'text-red-500' },
-    { label: 'Version', value: '2.0.0', icon: Package, color: 'text-purple-500' }
+    { label: 'Total Leads', value: '6,916+', icon: Users, color: 'text-blue-500' },
+    { label: 'Total Reach', value: '5.9M+', icon: Eye, color: 'text-emerald-500' },
+    { label: 'Impressions', value: '21M+', icon: TrendingUp, color: 'text-purple-500' },
+    { label: 'Campaigns', value: '18', icon: Target, color: 'text-orange-500' }
+  ];
+
+  const skills = [
+    'RE Lead Generation Strategies',
+    'Facebook Ads Creation & Management',
+    'Google Ads Creation & Management',
+    'SEO Planning & Implementation',
+    'Social Media Content Strategy'
   ];
 
   return (
-    <section id="layerx" className="py-16 sm:py-24 md:py-32 bg-gradient-to-br from-dev-bg-light via-dev-surface-light to-dev-bg-light dark:from-dev-bg-dark dark:via-dev-surface-dark dark:to-dev-bg-dark overflow-hidden relative">
+    <section id="campaigns" className="py-16 sm:py-24 md:py-32 bg-gradient-to-br from-dev-bg-light via-dev-surface-light to-dev-bg-light dark:from-dev-bg-dark dark:via-dev-surface-dark dark:to-dev-bg-dark overflow-hidden relative">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Gradient Orbs */}
@@ -182,32 +158,6 @@ export const CampaignsSection: React.FC = () => {
             }}
           />
         ))}
-
-        {/* Floating Code Elements */}
-        {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
-            key={`code-${i}`}
-            className="absolute text-xs font-mono text-blue-400/20 dark:text-blue-400/30"
-            initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              opacity: 0
-            }}
-            animate={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              opacity: [0, 0.5, 0],
-              rotate: [0, 360]
-            }}
-            transition={{
-              duration: 15 + Math.random() * 10,
-              repeat: Infinity,
-              delay: i * 1
-            }}
-          >
-            {['class', 'extends', 'Widget', 'GetX', 'Controller', 'Service', 'Repository', 'Model'][i % 8]}
-          </motion.div>
-        ))}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -226,7 +176,6 @@ export const CampaignsSection: React.FC = () => {
             transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
             whileHover={{ scale: 1.05 }}
           >
-            {/* Shimmer Effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
               initial={{ x: '-100%' }}
@@ -234,8 +183,8 @@ export const CampaignsSection: React.FC = () => {
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             />
             
-            <Package className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-500" />
-            <span className="text-blue-500 font-bold text-sm sm:text-base md:text-lg">Open Source Innovation</span>
+            <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-500" />
+            <span className="text-blue-500 font-bold text-sm sm:text-base md:text-lg">Performance Marketing Expert</span>
             <motion.div
               className="ml-2 sm:ml-3 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
               animate={{ 
@@ -254,11 +203,11 @@ export const CampaignsSection: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              LayerX
+              Meta Ads
             </span>
             <br />
             <span className="text-dev-text-primary-light dark:text-dev-text-primary-dark">
-              Architecture
+              Campaign Performance
             </span>
           </motion.h2>
 
@@ -268,8 +217,8 @@ export const CampaignsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            A production-optimized Flutter architecture that revolutionizes development workflows. 
-            Clean, scalable, and maintainable code structure for enterprise applications.
+            Proven track record in driving real estate leads through strategic Meta advertising campaigns. 
+            Specialized in lead generation, audience targeting, and ROI optimization.
           </motion.p>
 
           {/* Enhanced Stats Row */}
@@ -293,18 +242,11 @@ export const CampaignsSection: React.FC = () => {
                   whileHover={{ rotateY: 5, rotateX: 5 }}
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  {/* Shimmer Effect */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: '200%' }}
                     transition={{ duration: 1 }}
-                  />
-                  
-                  {/* Glow Effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl"
-                    initial={false}
                   />
                   
                   <div className="relative z-10">
@@ -320,368 +262,89 @@ export const CampaignsSection: React.FC = () => {
             ))}
           </motion.div>
           
-          <motion.a
-            href="https://pub.dev/packages/layerx_generator"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
-            whileHover={{ scale: 1.05, y: -3 }}
-            whileTap={{ scale: 0.95 }}
+          {/* Contact Info */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <Package className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-            <span className="font-mono text-sm sm:text-base">layerx_generator: ^2.0.0</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
-            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 opacity-70" />
-            
-            {/* Shine Effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-              initial={{ x: '-100%' }}
-              animate={{ x: '200%' }}
-              transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-            />
-          </motion.a>
-        </motion.div>
-
-        {/* Architecture Flow & Features */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start mb-12 sm:mb-16 md:mb-20">
-          {/* Interactive Architecture Layers */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-6 sm:mb-8 text-center">
-              Architecture Flow
-            </h3>
-            
-            <div className="space-y-4 sm:space-y-6 relative">
-              {/* Connection Lines */}
-              <svg className="absolute left-6 sm:left-8 top-16 sm:top-20 w-0.5 h-full z-0" style={{ height: 'calc(100% - 5rem)' }}>
-                <motion.line
-                  x1="0" y1="0" x2="0" y2="100%"
-                  stroke="url(#gradient)"
-                  strokeWidth="3"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 2, delay: 1 }}
-                />
-                <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#3b82f6" />
-                    <stop offset="33%" stopColor="#10b981" />
-                    <stop offset="66%" stopColor="#8b5cf6" />
-                    <stop offset="100%" stopColor="#f97316" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {architectureLayers.map((layer, index) => (
-                <motion.div
-                  key={layer.name}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  viewport={{ once: true }}
-                  className="relative z-10"
-                >
-                  <motion.div
-                    className={`group cursor-pointer p-4 sm:p-6 lg:p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl hover:shadow-4xl transition-all duration-500 overflow-hidden ${
-                      activeLayer === index ? 'ring-2 ring-blue-500 shadow-4xl' : ''
-                    }`}
-                    whileHover={{ scale: 1.02, x: 10, rotateY: 5 }}
-                    onClick={() => setActiveLayer(activeLayer === index ? null : index)}
-                    style={{ transformStyle: 'preserve-3d' }}
-                  >
-                    {/* Background Gradient */}
-                    <motion.div
-                      className={`absolute inset-0 bg-gradient-to-br ${layer.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                      initial={false}
-                    />
-                    
-                    {/* Shimmer Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '200%' }}
-                      transition={{ duration: 1.2 }}
-                    />
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <motion.div 
-                            className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-r ${layer.color} flex items-center justify-center mr-3 sm:mr-4 lg:mr-6 shadow-2xl`}
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 0.8, type: "spring" }}
-                          >
-                            <layer.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 text-white" />
-                          </motion.div>
-                          <div>
-                            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-1">
-                              {layer.name}
-                            </h4>
-                            <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark text-sm sm:text-base">
-                              {layer.description}
-                            </p>
-                          </div>
-                        </div>
-                        <motion.div
-                          animate={{ rotate: activeLayer === index ? 180 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-dev-text-secondary-light dark:text-dev-text-secondary-dark" />
-                        </motion.div>
-                      </div>
-                      
-                      <AnimatePresence>
-                        {activeLayer === index && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200/50 dark:border-gray-700/50"
-                          >
-                            <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark mb-3 sm:mb-4 text-sm sm:text-base">
-                              {layer.details}
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                              {layer.files.map((file) => (
-                                <span
-                                  key={file}
-                                  className="px-2 sm:px-3 py-1 bg-blue-500/10 text-blue-500 text-xs font-mono rounded-full border border-blue-500/20"
-                                >
-                                  {file}
-                                </span>
-                              ))}
-                            </div>
-                            <motion.button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setShowCodeExample(!showCodeExample);
-                              }}
-                              className="text-blue-500 hover:text-purple-500 font-medium text-sm flex items-center transition-colors duration-300"
-                              whileHover={{ x: 5 }}
-                            >
-                              View Code Example
-                              <Code className="w-4 h-4 ml-1" />
-                            </motion.button>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
-
-                  {/* Data Flow Arrows */}
-                  {index < architectureLayers.length - 1 && (
-                    <motion.div
-                      className="flex justify-center my-4 sm:my-6"
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: index * 0.15 + 0.5 }}
-                    >
-                      <motion.div
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-lg"
-                        animate={{ 
-                          scale: [1, 1.2, 1],
-                          rotate: [0, 180, 360]
-                        }}
-                        transition={{ 
-                          duration: 3, 
-                          repeat: Infinity,
-                          delay: index * 0.5
-                        }}
-                      >
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Enhanced Features & Code Example */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="space-y-6 sm:space-y-8"
-          >
-            {/* Code Example */}
-            <AnimatePresence>
-              {(showCodeExample && activeLayer !== null) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                  className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 shadow-2xl overflow-hidden relative"
-                >
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <div className="flex items-center">
-                      <div className="flex space-x-1.5 sm:space-x-2">
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500 rounded-full" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-yellow-500 rounded-full" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full" />
-                      </div>
-                      <span className="ml-3 sm:ml-4 text-xs sm:text-sm text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-mono">
-                        {architectureLayers[activeLayer].files[0]}
-                      </span>
-                    </div>
-                    <motion.button
-                      onClick={() => setShowCodeExample(false)}
-                      className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark hover:text-dev-text-primary-light dark:hover:text-dev-text-primary-dark transition-colors"
-                      whileHover={{ scale: 1.1, rotate: 90 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      ✕
-                    </motion.button>
-                  </div>
-                  
-                  <motion.pre
-                    className="text-xs sm:text-sm font-mono text-dev-text-primary-light dark:text-dev-text-primary-dark overflow-x-auto bg-gray-50 dark:bg-gray-800 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-gray-200/50 dark:border-gray-700/50"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    <code>{architectureLayers[activeLayer].code}</code>
-                  </motion.pre>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Enhanced Features Grid */}
-            <div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-6 sm:mb-8">
-                Key Features
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="group relative"
-                  >
-                    <motion.div
-                      className="p-4 sm:p-6 lg:p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl hover:shadow-4xl transition-all duration-500 overflow-hidden"
-                      whileHover={{ y: -8, scale: 1.02, rotateY: 5 }}
-                      style={{ transformStyle: 'preserve-3d' }}
-                    >
-                      {/* Shimmer Effect */}
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
-                        initial={{ x: '-100%' }}
-                        whileHover={{ x: '200%' }}
-                        transition={{ duration: 1 }}
-                      />
-                      
-                      {/* Glow Effect */}
-                      <motion.div
-                        className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl sm:rounded-3xl`}
-                        initial={false}
-                      />
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-start">
-                          <motion.div
-                            className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${feature.gradient} rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-2xl`}
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 0.8, type: "spring" }}
-                          >
-                            <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
-                          </motion.div>
-                          <div>
-                            <h4 className="font-bold text-base sm:text-lg lg:text-xl text-dev-text-primary-light dark:text-dev-text-primary-dark mb-2">
-                              {feature.title}
-                            </h4>
-                            <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark text-sm sm:text-base">
-                              {feature.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Installation Command */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 lg:p-8 shadow-2xl relative overflow-hidden"
+            <motion.a
+              href="tel:+971547634170"
+              className="group inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden text-sm sm:text-base"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {/* Shimmer Effect */}
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span>+971 54 763 4170</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
                 initial={{ x: '-100%' }}
                 animate={{ x: '200%' }}
-                transition={{ duration: 4, repeat: Infinity, repeatDelay: 3 }}
+                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
               />
-              
-              <h4 className="font-bold text-lg sm:text-xl lg:text-2xl text-dev-text-primary-light dark:text-dev-text-primary-dark mb-3 sm:mb-4">
-                Quick Installation
-              </h4>
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl font-mono text-xs sm:text-sm lg:text-base border border-gray-200/50 dark:border-gray-700/50">
-                <div className="text-emerald-500 mb-2"># Add to pubspec.yaml</div>
-                <div className="text-dev-text-primary-light dark:text-dev-text-primary-dark">
-                  dependencies:<br />
-                  &nbsp;&nbsp;layerx_generator: ^2.0.0
-                </div>
-                <div className="text-emerald-500 mt-4 mb-2"># Generate structure</div>
-                <div className="text-dev-text-primary-light dark:text-dev-text-primary-dark">
-                  dart run layerx_generator --path .
-                </div>
-              </div>
+            </motion.a>
+
+            <motion.a
+              href="mailto:Atif.qadeerr@gmail.com"
+              className="group inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold rounded-full shadow-2xl hover:shadow-3xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 relative overflow-hidden text-sm sm:text-base"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span>Atif.qadeerr@gmail.com</span>
+            </motion.a>
+
+            <motion.div
+              className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium rounded-full border border-gray-200/50 dark:border-gray-700/50 text-sm sm:text-base"
+            >
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span>Dubai, UAE</span>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
 
-        {/* Enhanced Benefits Section */}
+        {/* Primary Campaigns Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="mb-12 sm:mb-16 md:mb-20"
         >
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-8 sm:mb-12">
-            Why Choose LayerX?
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-6 sm:mb-8">
+            Primary Campaigns
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { text: 'Clean separation of concerns', icon: '🎯' },
-              { text: 'Testable and maintainable code', icon: '🧪' },
-              { text: 'Scalable for enterprise applications', icon: '🚀' },
-              { text: 'Optimized for Flutter performance', icon: '⚡' }
-            ].map((benefit, index) => (
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            {primaryCampaigns.map((campaign, index) => (
               <motion.div
-                key={benefit.text}
+                key={campaign.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className="relative group"
               >
                 <motion.div
-                  className="p-4 sm:p-6 lg:p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl hover:shadow-4xl transition-all duration-500 overflow-hidden relative"
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`p-4 sm:p-6 lg:p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border ${
+                    campaign.highlight ? 'border-blue-500/50 ring-2 ring-blue-500/20' : 'border-gray-200/50 dark:border-gray-700/50'
+                  } shadow-2xl hover:shadow-4xl transition-all duration-500 overflow-hidden cursor-pointer`}
+                  whileHover={{ y: -8, scale: 1.02, rotateY: 5 }}
+                  onClick={() => setActiveCampaign(activeCampaign === index ? null : index)}
+                  style={{ transformStyle: 'preserve-3d' }}
                 >
-                  {/* Shimmer Effect */}
+                  {campaign.highlight && (
+                    <motion.div
+                      className="absolute top-4 right-4 flex items-center px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold rounded-full"
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <Award className="w-3 h-3 mr-1" />
+                      Top Performer
+                    </motion.div>
+                  )}
+
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
                     initial={{ x: '-100%' }}
@@ -689,11 +352,73 @@ export const CampaignsSection: React.FC = () => {
                     transition={{ duration: 1 }}
                   />
                   
+                  <motion.div
+                    className={`absolute inset-0 bg-gradient-to-r ${campaign.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl`}
+                    initial={false}
+                  />
+                  
                   <div className="relative z-10">
-                    <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">{benefit.icon}</div>
-                    <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark font-medium text-sm sm:text-base">
-                      {benefit.text}
-                    </p>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center flex-1">
+                        <motion.div 
+                          className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-r ${campaign.color} flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-2xl`}
+                          whileHover={{ rotate: 360, scale: 1.1 }}
+                          transition={{ duration: 0.8, type: "spring" }}
+                        >
+                          <campaign.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
+                        </motion.div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-base sm:text-lg lg:text-xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-1 truncate">
+                            {campaign.name}
+                          </h4>
+                          <p className="text-dev-text-secondary-light dark:text-dev-text-secondary-dark text-xs sm:text-sm">
+                            {campaign.platform}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+                      <div className="bg-blue-500/10 p-3 rounded-xl border border-blue-500/20">
+                        <div className="text-xs text-dev-text-secondary-light dark:text-dev-text-secondary-dark mb-1">Results</div>
+                        <div className="text-sm sm:text-base font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                          {campaign.results}
+                        </div>
+                      </div>
+                      <div className="bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20">
+                        <div className="text-xs text-dev-text-secondary-light dark:text-dev-text-secondary-dark mb-1">Cost/Result</div>
+                        <div className="text-sm sm:text-base font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                          {campaign.costPerResult}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <AnimatePresence>
+                      {activeCampaign === index && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4 pt-4 border-t border-gray-200/50 dark:border-gray-700/50"
+                        >
+                          <div className="grid grid-cols-2 gap-3">
+                            <div>
+                              <div className="text-xs text-dev-text-secondary-light dark:text-dev-text-secondary-dark mb-1">Reach</div>
+                              <div className="text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                                {campaign.reach}
+                              </div>
+                            </div>
+                            <div>
+                              <div className="text-xs text-dev-text-secondary-light dark:text-dev-text-secondary-dark mb-1">Impressions</div>
+                              <div className="text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                                {campaign.impressions}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               </motion.div>
@@ -701,29 +426,146 @@ export const CampaignsSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Other Campaigns Table */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-12 sm:mt-16 md:mt-20"
+          className="mb-12 sm:mb-16 md:mb-20"
         >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-6 sm:mb-8">
+            Other Campaigns Overview
+          </h3>
+          
+          <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-50/80 dark:bg-gray-800/80 border-b border-gray-200/50 dark:border-gray-700/50">
+                  <tr>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                      Campaign Name
+                    </th>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                      Status
+                    </th>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                      Results
+                    </th>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark hidden md:table-cell">
+                      Reach
+                    </th>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark hidden lg:table-cell">
+                      Frequency
+                    </th>
+                    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                      Cost/Result
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {otherCampaigns.map((campaign, index) => (
+                    <motion.tr
+                      key={campaign.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      viewport={{ once: true }}
+                      className="border-b border-gray-200/50 dark:border-gray-700/50 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors"
+                    >
+                      <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-dev-text-primary-light dark:text-dev-text-primary-dark font-medium">
+                        {campaign.name}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3 sm:py-4">
+                        <span className={`inline-flex px-2 sm:px-3 py-1 text-xs font-bold rounded-full ${
+                          campaign.status === 'Active' 
+                            ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' 
+                            : 'bg-gray-500/10 text-gray-500 border border-gray-500/20'
+                        }`}>
+                          {campaign.status}
+                        </span>
+                      </td>
+                      <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-dev-text-secondary-light dark:text-dev-text-secondary-dark">
+                        {campaign.results}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-dev-text-secondary-light dark:text-dev-text-secondary-dark hidden md:table-cell">
+                        {campaign.reach}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-dev-text-secondary-light dark:text-dev-text-secondary-dark hidden lg:table-cell">
+                        {campaign.frequency}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                        {campaign.costPerResult}
+                      </td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dev-text-primary-light dark:text-dev-text-primary-dark mb-8 sm:mb-12">
+            Core Competencies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <motion.div
+                  className="px-4 sm:px-6 py-2 sm:py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
+                  whileHover={{ scale: 1.05, y: -3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  />
+                  <span className="relative z-10 text-sm sm:text-base font-medium text-dev-text-primary-light dark:text-dev-text-primary-dark">
+                    {skill}
+                  </span>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
           <motion.div
-            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 backdrop-blur-xl rounded-full border border-blue-500/20 relative overflow-hidden"
-            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-12 sm:mt-16"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-              initial={{ x: '-100%' }}
-              animate={{ x: '200%' }}
-              transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-            />
-            
-            <Award className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-500" />
-            <span className="text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold text-sm sm:text-base md:text-lg">
-              Trusted by Flutter developers worldwide
-            </span>
+              className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 backdrop-blur-xl rounded-full border border-blue-500/20 relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
+                initial={{ x: '-100%' }}
+                animate={{ x: '200%' }}
+                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+              />
+              
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-500" />
+              <span className="text-dev-text-primary-light dark:text-dev-text-primary-dark font-bold text-sm sm:text-base md:text-lg">
+                Driving measurable results through data-driven marketing strategies
+              </span>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
